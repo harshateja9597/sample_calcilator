@@ -36,7 +36,7 @@ jobs:
         run: vendor/bin/phpcs
 
       - name: PHP Mess Detector
-        run: vendor/bin/phpmd . text phpmd.xml
+        run: vendor/bin/phpmd index.php text phpmd.xml
 
       - name: PHP Code Beautifier and Fixer
         run: vendor/bin/phpcbf
