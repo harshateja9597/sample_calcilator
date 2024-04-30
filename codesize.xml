@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="My Code Size Rules">
+    <description>Custom rule set for code size analysis</description>
+
+    <!-- Excessive Method Length -->
+    <rule ref="rulesets/codesize.xml/ExcessiveMethodLength"/>
+
+    <!-- Excessive Class Length -->
+    <rule ref="rulesets/codesize.xml/ExcessiveClassLength"/>
+
+    <!-- Excessive Parameter List -->
+    <rule ref="rulesets/codesize.xml/ExcessiveParameterList"/>
+
+    <!-- Excessive Method Complexity -->
+    <rule ref="rulesets/codesize.xml/ExcessiveMethodComplexity"/>
+
+    <!-- Excessive Code Complexity -->
+    <rule ref="rulesets/codesize.xml/ExcessiveCodeComplexity"/>
+
+    <!-- Excessive Nesting Depth -->
+    <rule ref="rulesets/codesize.xml/ExcessiveNestingDepth"/>
+
+    <!-- Excessive Class Complexity -->
+    <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity"/>
+</ruleset>
