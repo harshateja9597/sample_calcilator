@@ -1,4 +1,4 @@
-name: Code Quality Check
+name: PHP Code Quality
 
 on:
   push:
@@ -9,29 +9,31 @@ on:
       - main
 
 jobs:
-  code-quality:
+  php_code_quality:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0' # You can specify the PHP version you want to use
 
-      - name: Install Composer dependencies
-        run: composer install
+      - name: Install Composer Dependencies
+        run: composer install --no-progress --no-suggest --no-interaction
 
-      - name: PHP lint
+      - name: PHP Lint
         run: php -l .
 
-      - name: PHP Mess Detector
-        run: vendor/bin/phpmd index.php text phpmd.xml
+      - name: PHP CodeSniffer (PHPCS)
+        run: ./vendor/bin/phpcs --standard=PSR12 .
 
-      - name: PHP Code Beautifier and Fixer
-        run: vendor/bin/phpcbf
-        continue-on-error: true
-        
+      - name: PHP Mess Detector (PHPMD)
+        run: ./vendor/bin/phpmd . text phpmd.xml
+
+      - name: PHP Code Beautifier and Fixer (PHPCBF)
+        run: ./vendor/bin/phpcbf --standard=PSR12 .
+
+      # You can add more steps for other testing, building, or deployment tasks
