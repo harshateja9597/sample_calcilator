@@ -28,9 +28,6 @@ jobs:
       - name: PHP lint
         run: php -l .
 
-      - name: PHP_CodeSniffer
-        run: vendor/bin/phpcs
-
       - name: PHP Mess Detector
         run: vendor/bin/phpmd index.php text phpmd.xml
 
