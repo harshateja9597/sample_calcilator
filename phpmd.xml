@@ -2,5 +2,4 @@
 <ruleset name="My PHPMD Rules">
     <rule ref="codesize"/>
     <rule ref="naming"/>
-    <rule ref="unusedcode"/>
 </ruleset>
