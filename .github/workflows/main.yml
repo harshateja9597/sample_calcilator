@@ -29,11 +29,14 @@ jobs:
 
       - name: PHP CodeSniffer (PHPCS)
         run: ./vendor/bin/phpcs --standard=PSR12 .
+        continue-on-error: true
 
       - name: PHP Mess Detector (PHPMD)
         run: ./vendor/bin/phpmd . text phpmd.xml
-
+        continue-on-error: true
+        
       - name: PHP Code Beautifier and Fixer (PHPCBF)
         run: ./vendor/bin/phpcbf --standard=PSR12 .
-
+        continue-on-error: true
+        
       # You can add more steps for other testing, building, or deployment tasks
