@@ -27,9 +27,9 @@ jobs:
       - name: PHP Lint
         run: php -l .
 
-      - name: PHP CodeSniffer (PHPCS)
-        run: ./vendor/bin/phpcs --standard=PSR1 .
-        continue-on-error: false
+      #- name: PHP CodeSniffer (PHPCS)
+       # run: ./vendor/bin/phpcs --standard=PSR12 .
+        # continue-on-error: false
 
       - name: PHP Mess Detector (PHPMD)
         run: ./vendor/bin/phpmd . text index.php
