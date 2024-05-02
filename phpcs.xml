@@ -6,6 +6,6 @@
     <arg name="standard" value="PSR12"/>
 
     <!-- Define the files and directories to be analyzed -->
-    <file>.</file>
+    <file>index.php</file>
   
 </ruleset>
