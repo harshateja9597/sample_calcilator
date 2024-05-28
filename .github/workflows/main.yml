@@ -22,20 +22,18 @@ jobs:
           php-version: '8.0' # You can specify the PHP version you want to use
 
       - name: Install Composer Dependencies
-        run: composer install --no-progress --no-suggest --no-interaction
+        run: composer install
 
       - name: PHP Lint
         run: php -l .
 
-      #- name: PHP CodeSniffer (PHPCS)
-       # run: ./vendor/bin/phpcs --standard=PSR12 .
-        # continue-on-error: false
+      - name: PHP CodeSniffer (PHPCS)
+        run: ./vendor/bin/phpcs --standard=PSR12 .
 
       - name: PHP Mess Detector (PHPMD)
         run: ./vendor/bin/phpmd . text index.php
-        continue-on-error: false
         
       - name: PHP Code Beautifier and Fixer (PHPCBF)
         run: ./vendor/bin/phpcbf --standard=PSR12 index.php
         
-      # You can add more steps for other testing, building, or deployment tasks
+      
